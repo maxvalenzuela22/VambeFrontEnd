@@ -1,0 +1,12 @@
+/* Elimina el fondo blanco predeterminado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: transparent; /* O el color de fondo que desees */
+    font-family: Arial, sans-serif; /* Asegúrate de que la fuente se vea bien */
+  }
+  
