@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import DashboardPage from './views/DashboardPage';
 import HomePage from './views/HomePage';
 import ChartPage from './views/ChartPage';
+import MetricsPage from './views/MetricsPage';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 
@@ -12,6 +13,7 @@ const AppRoutes = () => (
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/statistics/:category" element={<ChartPage />} />
+        <Route path="/metrics" element={<MetricsPage />} />
     </Routes>
     <Footer />
   </Router>

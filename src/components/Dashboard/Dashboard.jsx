@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CategoryCard from "./CategoryCard/CategoryCard";
 import "./Dashboard.css";
 
 const categories = [
   {
     name: "Industria",
-    description: "Análisis de la industria en las que se desenvuelven las principales empresas que han tenido reuniones con Vambe.",
+    description: "Análisis de la industria en las que se desenvuelven los principales clientes que se han contactado con Vambe.",
     route: "/statistics/Industria",
   },
   {
@@ -20,7 +21,7 @@ const categories = [
   },
   {
     name: "Canal de Descubrimiento de Vambe",
-    description: "Cómo los usuarios llegan a conocer Vambe",
+    description: "Cómo los usuarios llegan a conocer Vambe.",
     route: "/statistics/Canal%20de%20Descubrimiento%20de%20Vambe",
   },
 ];
@@ -31,21 +32,10 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-title">Dashboard de Categorías</h1>
-      <p className="dashboard-subtitle">
-        Explora los datos y estadísticas sobre las distintas categorías seleccionadas.
-      </p>
+      <p className="dashboard-subtitle">Explora los datos y estadísticas sobre las distintas categorías seleccionadas.</p>
       <div className="category-grid">
         {categories.map((category, index) => (
-          <div key={index} className="category-card">
-            <h2 className="category-title">{category.name}</h2>
-            <p className="category-description">{category.description}</p>
-            <button
-              className="category-button"
-              onClick={() => navigate(category.route)}
-            >
-              Ver Gráfico
-            </button>
-          </div>
+          <CategoryCard key={index} category={category} onClick={() => navigate(category.route)} />
         ))}
       </div>
     </div>

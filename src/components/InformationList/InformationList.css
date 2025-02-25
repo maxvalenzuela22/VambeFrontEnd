@@ -1,0 +1,104 @@
+.info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .info-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+  }
+  
+  /* Filtros */
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .filters input,
+  .filters select,
+  .filters button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .filters button {
+    background-color: #1e3a8a;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .filters button:hover {
+    background-color: #143675;
+  }
+  
+  /* Lista de información */
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .info-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-main {
+    flex: 2;
+    text-align: left;
+  }
+  
+  .info-subcategories {
+    flex: 3;
+    text-align: left;
+  }
+  
+  .info-subcategories ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .info-subcategories li {
+    background: #eef2ff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+  }
+  
+  /* Estado de los acuerdos */
+  .status {
+    font-weight: bold;
+  }
+  
+  .status.closed {
+    color: green;
+  }
+  
+  .status.open {
+    color: red;
+  }
+  
+  @media (max-width: 768px) {
+    .info-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

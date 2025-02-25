@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaHome, FaChartBar } from "react-icons/fa";
+import { FaHome, FaChartBar, FaListUl } from "react-icons/fa";
 import "./Navbar.css";
 import logo from "/logo-vambe.png";
 
@@ -18,6 +18,9 @@ const Navbar = () => {
         </button>
         <button className="nav-button" onClick={() => navigate("/dashboard")}>
           <FaChartBar style={{ marginRight: "8px" }} /> Dashboard
+        </button>
+        <button className="nav-button" onClick={() => navigate("/metrics")}>
+          <FaListUl style={{ marginRight: "8px" }} /> Metrics
         </button>
       </div>
     </nav>
