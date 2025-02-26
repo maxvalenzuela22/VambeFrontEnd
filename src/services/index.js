@@ -1,6 +1,7 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:3000';
+require("dotenv").config();
+const API_URL = process.env.BACKEND_URL;
+const API_URL_METRICS = `${API_URL}/metrics`;
 
 export const fetchStatistics = async (category) => {
     try {
@@ -15,7 +16,6 @@ export const fetchStatistics = async (category) => {
 export const fetchMetrics = async (filters = {}) => {
   try {
     const queryParams = new URLSearchParams(filters).toString();
-    const API_URL_METRICS = "http://localhost:3000/metrics";
     const url = queryParams ? `${API_URL_METRICS}?${queryParams}` : API_URL_METRICS;
 
     const response = await axios.get(url);
@@ -28,7 +28,6 @@ export const fetchMetrics = async (filters = {}) => {
 
 export const fetchSellers = async () => {
     try {
-        const API_URL_METRICS = "http://localhost:3000/metrics";
         const response = await axios.get(`${API_URL_METRICS}/sellers`);
         return response.data.data;
     } catch (error) {
@@ -39,7 +38,6 @@ export const fetchSellers = async () => {
 
 export const fetchSubcategories = async (categoryName) => {
     try {
-        const API_URL_METRICS = "http://localhost:3000/metrics";
         const response = await axios.get(`${API_URL_METRICS}/subcategories?categoryName=${categoryName}`);
         return response.data.data;
     } catch (error) {
