@@ -1,7 +1,7 @@
 import axios from 'axios';
-require("dotenv").config();
-const API_URL = process.env.BACKEND_URL;
+const API_URL = import.meta.env.VITE_BACKEND_URL;
 const API_URL_METRICS = `${API_URL}/metrics`;
+
 
 export const fetchStatistics = async (category) => {
     try {
