@@ -61,7 +61,6 @@ export const fetchInfoById = async (id) => {
 export const fetchMostClosedDealsByCategory = async (category) => {
     try {
         const response = await axios.get(`${API_URL}/statistics/most-closed-deals/${category}`);
-        console.log('Response:', response.data);
         return response.data;
     } catch (error) {
         console.error('Error fetching data:', error);

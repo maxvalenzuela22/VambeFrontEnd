@@ -18,7 +18,6 @@ const InformationList = () => {
 
   const loadData = async () => {
     const filteredData = await fetchMetrics(filters);
-    console.log("filteredData", filteredData);
     setInformation(filteredData);
   };
 
@@ -119,7 +118,7 @@ const InformationList = () => {
                 {info.closed ? "✅ Acuerdo Cerrado" : "❌ Acuerdo No Cerrado"}
               </p>
               <p>
-                <strong>Transcripción:</strong> 
+                <strong>Transcripción: </strong> 
                 {expandedMessages[info.id]
                   ? info.message 
                   : truncateMessage(info.message)}

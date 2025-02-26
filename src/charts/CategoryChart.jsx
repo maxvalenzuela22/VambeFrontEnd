@@ -12,7 +12,6 @@ const CategoryChart = ({ categoryName }) => {
         const fetchData = async () => {
             try {
                 const data = await fetchStatistics(categoryName);
-                console.log(data)
                 const labels = data.map(item => item.subcategory);
                 const counts = data.map(item => item.count);
 

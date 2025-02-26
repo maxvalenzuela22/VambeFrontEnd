@@ -13,7 +13,7 @@ const Info = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [filter, setFilter] = useState("closed"); // Estado para filtrar entre acuerdos cerrados o fallidos
+    const [filter, setFilter] = useState("closed");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,7 +30,7 @@ const Info = () => {
         };
 
         fetchData();
-    }, [filter]); // Se vuelve a cargar cuando cambia el filtro
+    }, [filter]);
 
     if (loading) return <div className="info-loading">Cargando...</div>;
     if (error) return <div className="info-error">{error}</div>;
@@ -47,7 +47,7 @@ const Info = () => {
                     </div>
                     <div className={`${filter}-deals`}>
                         <p className={`${filter}-deals-count`}>
-                            {item.amount} acuerdos {filter === "closed" ? "cerrados" : "fallidos"}
+                            {item.amount} acuerdos {filter === "closed" ? "cerrados" : "no cerrados"}
                         </p>
                     </div>
                 </div>
@@ -57,13 +57,13 @@ const Info = () => {
 
     return (
         <div className="info-container">
-            <h2 className="info-title">Subcategorías con más acuerdos {filter === "closed" ? "cerrados" : "fallidos"} por categoría</h2>
+            <h2 className="info-title">Subcategorías con más acuerdos {filter === "closed" ? "cerrados" : "no cerrados"} por categoría</h2>
 
             <div className="filter-container">
                 <label>Mostrar: </label>
                 <select value={filter} onChange={(e) => setFilter(e.target.value)}>
                     <option value="closed">Acuerdos Cerrados</option>
-                    <option value="failed">Acuerdos Fallidos</option>
+                    <option value="failed">Acuerdos No Cerrados</option>
                 </select>
             </div>
 
