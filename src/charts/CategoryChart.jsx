@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
-import { fetchStatistics } from '../services/index.js'; 
+import { fetchStatistics } from '../services/index.js';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
@@ -12,6 +12,7 @@ const CategoryChart = ({ categoryName }) => {
         const fetchData = async () => {
             try {
                 const data = await fetchStatistics(categoryName);
+                console.log(data)
                 const labels = data.map(item => item.subcategory);
                 const counts = data.map(item => item.count);
 
@@ -19,12 +20,13 @@ const CategoryChart = ({ categoryName }) => {
                     labels: labels,
                     datasets: [
                         {
-                            label: 'Conteo por Subcategoría',
+                            label: 'Cantidad',
                             data: counts,
-                            backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: labels.map((_, i) => `hsl(${i * 35}, 80%, 60%)`),
+                            borderColor: labels.map((_, i) => `hsl(${i * 35}, 80%, 40%)`),
                             borderWidth: 2,
-                            hoverBackgroundColor: 'rgba(75, 192, 192, 0.8)',
+                            borderRadius: 6,
+                            hoverBackgroundColor: labels.map((_, i) => `hsl(${i * 35}, 90%, 50%)`),
                         },
                     ],
                 });
@@ -42,9 +44,35 @@ const CategoryChart = ({ categoryName }) => {
 
     return (
         <div className="chart-container">
-            <h2 className="chart-title">Estadísticas de {categoryName}</h2>
+            <h2 className="chart-title">📊 Estadísticas de {categoryName}</h2>
             <div className="chart">
-                <Bar data={chartData} options={{ responsive: true }} />
+                <Bar 
+                    data={chartData} 
+                    options={{
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                                titleFont: { size: 16, weight: 'bold' },
+                                bodyFont: { size: 14 },
+                                padding: 12,
+                                cornerRadius: 10,
+                            },
+                        },
+                        scales: {
+                            x: {
+                                grid: { display: false },
+                                ticks: { font: { size: 14 }, color: '#555' },
+                            },
+                            y: {
+                                grid: { color: '#ddd', lineWidth: 0.5 },
+                                ticks: { font: { size: 14 }, color: '#555' },
+                            },
+                        },
+                    }}
+                />
             </div>
         </div>
     );

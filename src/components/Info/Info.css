@@ -1,0 +1,92 @@
+.info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f6f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.info-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.category-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subcategory-left {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.subcategory-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.subcategory-category {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #555;
+}
+
+.closed-deals {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.closed-deals-count {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    background-color: #20ad33;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.failed-deals {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.failed-deals-count {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #cc4c4c;
+    background-color: #ff5757; /* Fondo rojo para los acuerdos fallidos */
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+/* Mensajes de carga y error */
+.info-loading,
+.info-error,
+.info-no-data {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #888;
+    margin-top: 20px;
+}

@@ -14,13 +14,13 @@ const Navbar = () => {
       </div>
       <div className="navbar-links">
         <button className="nav-button" onClick={() => navigate("/")}>
-          <FaHome style={{ marginRight: "8px" }} /> Home
+          <FaHome style={{ marginRight: "8px" }} /> Inicio
         </button>
         <button className="nav-button" onClick={() => navigate("/dashboard")}>
-          <FaChartBar style={{ marginRight: "8px" }} /> Dashboard
+          <FaChartBar style={{ marginRight: "8px" }} /> Panel
         </button>
-        <button className="nav-button" onClick={() => navigate("/metrics")}>
-          <FaListUl style={{ marginRight: "8px" }} /> Metrics
+        <button className="nav-button" onClick={() => navigate("/category")}>
+          <FaListUl style={{ marginRight: "8px" }} /> Categorías
         </button>
       </div>
     </nav>

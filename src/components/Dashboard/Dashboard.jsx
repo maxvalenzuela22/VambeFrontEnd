@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CategoryCard from "./CategoryCard/CategoryCard";
-import "./Dashboard.css";
+import CategoryCard from "../CategoryCard/CategoryCard";
 
 const categories = [
   {
-    name: "Industria",
-    description: "Análisis de la industria en las que se desenvuelven los principales clientes que se han contactado con Vambe.",
-    route: "/statistics/Industria",
+    name: "Comparación de Categorías",
+    description: "Una forma interactiva de conocer más las relaciones entre categorías.",
+    route: "/vambe",
   },
   {
-    name: "Motivación para Buscar Vambe",
-    description: "Razones por las cuales los clientes buscan Vambe y sus necesidades.",
-    route: "/statistics/Motivacion%20para%20Buscar%20Vambe",
+    name: "Relación entre Acuerdos y Categorías",
+    description: "Una vista general de la relación entre los acuerdos con clientes y sus respectivas categorías.",
+    route: "/info",
   },
   {
-    name: "Interés en Funcionalidades Específicas",
-    description: "Las funcionalidades más valoradas por los clientes de Vambe.",
-    route: "/statistics/Interes%20Funcionalidades",
+    name: "Métricas Generales",
+    description: "Una vista general de la información más relevante de las reuniones con los clientes con filtros incluidos.",
+    route: "/metrics",
   },
   {
-    name: "Canal de Descubrimiento de Vambe",
-    description: "Cómo los usuarios llegan a conocer Vambe.",
-    route: "/statistics/Canal%20de%20Descubrimiento%20de%20Vambe",
+    name: "Vendedores y Categorías",
+    description: "Una forma interactiva de ver cómo los vendedores se relacionan con las categorías.",
+    route: "/dashboard",
   },
 ];
 
@@ -31,7 +30,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <h1 className="dashboard-title">Dashboard de Categorías</h1>
+      <h1 className="dashboard-title">Gráficos y Métricas Interactivas</h1>
       <p className="dashboard-subtitle">Explora los datos y estadísticas sobre las distintas categorías seleccionadas.</p>
       <div className="category-grid">
         {categories.map((category, index) => (

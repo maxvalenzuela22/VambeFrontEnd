@@ -50,7 +50,7 @@ const InformationList = () => {
 
   return (
     <div className="info-container">
-      <h1 className="info-title">Información General</h1>
+      <h1 className="info-title">Información general de los clientes de Vambe</h1>
 
       <div className="filters">
         <input
@@ -81,7 +81,7 @@ const InformationList = () => {
           <option value="">Categoría</option>
           <option value="Industria">Industria</option>
           <option value="Motivacion para Buscar Vambe">Motivacion para Buscar Vambe</option>
-          <option value="Interes Funcionalidades">Interés en Funcionalidades</option>
+          <option value="Interes en Funcionalidades">Interés en Funcionalidades</option>
           <option value="Motivacion para Buscar Vambe">Motivación para Buscar Vambe</option>
         </select>
         <select name="subcategory" value={filters.subcategory} onChange={handleFilterChange} disabled={!filters.category}>

@@ -11,11 +11,12 @@ const ChartPage = () => {
             <section className="chart-header">
                 <h1 className="category-title">{category}</h1>
                 <p className="category-description">
-                    Aquí podrás explorar las estadísticas detalladas de la categoría seleccionada, 
-                    con visualizaciones gráficas que te ayudarán a comprender mejor los datos.
+                    Explora las estadísticas detalladas de la categoría seleccionada con visualizaciones dinámicas 
+                    que te ayudarán a analizar la información de manera más efectiva.
                 </p>
             </section>
             <CategoryChart categoryName={category} />
+            <button onClick={() => window.history.back()} className="back-button">Volver</button>
         </div>
     );
 };

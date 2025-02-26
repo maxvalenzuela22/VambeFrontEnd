@@ -2,43 +2,54 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffff;
-    padding: 20px;
+    background: linear-gradient(135deg, #1c1c3c, #2a2a72);
+    padding: 40px 20px;
     min-height: 100vh;
 }
 
 .chart-header {
     text-align: center;
     margin-bottom: 40px;
-    background-color: #2563eb; /* Azul Vambe */
+    background: #0e112e;
     color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 1200px;
+    max-width: 1100px;
+    transition: all 0.3s ease-in-out;
+}
+
+.chart-header:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
 }
 
 .category-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 10px;
+    letter-spacing: 1.2px;
+    text-transform: capitalize;
+    color: #f0f0f0;
 }
 
 .category-description {
-    font-size: 1.2rem;
-    color: #f4f6f9;
-    line-height: 1.5;
+    font-size: 1.3rem;
+    color: #b4c2ca;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .chart-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f4f6f9;
+    background: rgba(255, 255, 255, 0.1);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     max-width: 1000px;
     margin: 20px auto;
     width: 100%;
@@ -47,7 +58,7 @@
 .chart-title {
     font-size: 2rem;
     font-weight: 600;
-    color: #333;
+    color:  #2a2a72;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -61,7 +72,44 @@
 }
 
 .loading {
-    font-size: 1.5rem;
-    color: #888;
+    font-size: 1.6rem;
+    color: #ddd;
     text-align: center;
+    font-style: italic;
+}
+
+.back-button {
+    background-color: #0f0f2e;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .chart-page-container {
+        padding: 30px 15px;
+    }
+
+    .chart-header {
+        padding: 20px;
+    }
+    
+    .category-title {
+        font-size: 2.2rem;
+    }
+    
+    .category-description {
+        font-size: 1.1rem;
+    }
+
+    .chart-container {
+        padding: 25px;
+    }
+
+    .chart {
+        height: 400px;
+    }
 }

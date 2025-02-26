@@ -36,3 +36,34 @@ export const fetchSubcategories = async (categoryName) => {
         return [];
     }
 };
+
+export const fetchInfoById = async (id) => {
+  try {
+    const response = await axios.get(`${API_URL}/metrics/data/${id}`);
+    return response.data.data;
+  } catch (error) {
+    console.error("Error fetching information:", error);
+    return [];
+  }
+}
+
+export const fetchMostClosedDealsByCategory = async (category) => {
+    try {
+        const response = await axios.get(`${API_URL}/statistics/most-closed-deals/${category}`);
+        console.log('Response:', response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
+}
+
+export const fetchMostFailedDealsByCategory = async (category) => {
+    try {
+        const response = await axios.get(`${API_URL}/statistics/most-failed-deals/${category}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
+}

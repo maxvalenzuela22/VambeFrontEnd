@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0e112e; /* Azul oscuro de Vambe */
+  background-color: #0e112e;
   padding: 10px 20px;
   color: white;
 }
