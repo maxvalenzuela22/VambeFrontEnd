@@ -21,7 +21,7 @@ const categories = [
   {
     name: "Vendedores y Categorías",
     description: "Una forma interactiva de ver cómo los vendedores se relacionan con las categorías.",
-    route: "/dashboard",
+    route: "/seller",
   },
 ];
 

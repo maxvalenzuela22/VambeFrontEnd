@@ -165,7 +165,7 @@ const RelevantInsights = () => {
                     <p>No hay datos disponibles para mostrar.</p>
                 )
             )}
-
+            <button onClick={() => window.history.back()} className="back-button">Volver</button>
         </div>
     );
 };

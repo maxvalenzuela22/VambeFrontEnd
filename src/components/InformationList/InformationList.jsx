@@ -8,29 +8,30 @@ const InformationList = () => {
   const [filters, setFilters] = useState({
     startDate: "",
     endDate: "",
+    client: "",
     seller: "",
     closed: "",
     category: "",
     subcategory: "",
   });
+  const [expandedMessages, setExpandedMessages] = useState({});
 
   const loadData = async () => {
     const filteredData = await fetchMetrics(filters);
+    console.log("filteredData", filteredData);
     setInformation(filteredData);
   };
 
   useEffect(() => {
     loadData();
-  }
-  , []);
+  }, []);
 
   useEffect(() => {
     if (filters.category) {
       fetchSubcategories(filters.category).then((data) => {
         setSubcategories(data);
       });
-    }
-    else {
+    } else {
       setSubcategories([]);
     }
   }, [filters.category]);
@@ -48,6 +49,11 @@ const InformationList = () => {
     });
   };
 
+  const truncateMessage = (message, limit = 30) => {
+    const words = message.split(" ");
+    return words.length > limit ? words.slice(0, limit).join(" ") + "..." : message;
+  };
+
   return (
     <div className="info-container">
       <h1 className="info-title">Información general de los clientes de Vambe</h1>
@@ -63,6 +69,13 @@ const InformationList = () => {
           type="date"
           name="endDate"
           value={filters.endDate}
+          onChange={handleFilterChange}
+        />
+        <input
+          type="text"
+          name="client"
+          placeholder="Nombre Cliente"
+          value={filters.client}
           onChange={handleFilterChange}
         />
         <input
@@ -105,6 +118,22 @@ const InformationList = () => {
               <p className={`status ${info.closed ? "closed" : "open"}`}>
                 {info.closed ? "✅ Acuerdo Cerrado" : "❌ Acuerdo No Cerrado"}
               </p>
+              <p>
+                <strong>Transcripción:</strong> 
+                {expandedMessages[info.id]
+                  ? info.message 
+                  : truncateMessage(info.message)}
+              </p>
+              {info.message.split(" ").length > 50 && !expandedMessages[info.id] && (
+                <button className="button-ver" onClick={() => setExpandedMessages({ ...expandedMessages, [info.id]: true })}>
+                  Ver más
+                </button>
+              )}
+              {expandedMessages[info.id] && info.message.split(" ").length > 50 && (
+                <button className="button-ver" onClick={() => setExpandedMessages({ ...expandedMessages, [info.id]: false })}>
+                  Ver menos
+                </button>
+              )}
             </div>
             <div className="info-subcategories">
               <h3>Subcategorías Asignadas:</h3>

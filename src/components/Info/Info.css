@@ -2,22 +2,52 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     background-color: #f4f6f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 30px auto;
 }
 
 .info-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: #333;
+    color: #1e293b;
     margin-bottom: 20px;
-    margin-top: 20px;
     text-align: center;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-container label {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.filter-container select {
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 2px solid #2563eb;
+    background-color: #fff;
+    color: #2563eb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-container select:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+    color: #2563eb;
 }
 
 .category-info {
@@ -29,8 +59,14 @@
     border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
     background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-info:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .subcategory-left {
@@ -39,7 +75,7 @@
 }
 
 .subcategory-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #2563eb;
     margin-bottom: 5px;
@@ -57,13 +93,18 @@
 }
 
 .closed-deals-count {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #333;
     background-color: #20ad33;
     padding: 10px 20px;
     border-radius: 8px;
     color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.closed-deals-count:hover {
+    background-color: #1a8c2c;
+    transform: scale(1.05);
 }
 
 .failed-deals {
@@ -72,16 +113,20 @@
 }
 
 .failed-deals-count {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #cc4c4c;
-    background-color: #ff5757; /* Fondo rojo para los acuerdos fallidos */
+    background-color: #ff5757;
     padding: 10px 20px;
     border-radius: 8px;
     color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Mensajes de carga y error */
+.failed-deals-count:hover {
+    background-color: #e04444;
+    transform: scale(1.05);
+}
+
 .info-loading,
 .info-error,
 .info-no-data {
@@ -89,4 +134,20 @@
     text-align: center;
     color: #888;
     margin-top: 20px;
+}
+
+.back-button {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2563eb;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #9ebce9;
+    transform: scale(1.05);
 }

@@ -26,6 +26,17 @@ export const fetchMetrics = async (filters = {}) => {
   }
 };
 
+export const fetchSellers = async () => {
+    try {
+        const API_URL_METRICS = "http://localhost:3000/metrics";
+        const response = await axios.get(`${API_URL_METRICS}/sellers`);
+        return response.data.data;
+    } catch (error) {
+        console.error('Error fetching sellers:', error);
+        return [];
+    }
+}
+
 export const fetchSubcategories = async (categoryName) => {
     try {
         const API_URL_METRICS = "http://localhost:3000/metrics";
