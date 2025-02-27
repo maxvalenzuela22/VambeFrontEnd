@@ -102,7 +102,9 @@ const RelevantInsights = () => {
             {
                 label: "Distribución de Subcategorías",
                 data: subcategoryCount.map(item => item.total),
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                backgroundColor: subcategoryCount.map((_, index) =>
+                    `hsl(${(index * 360) / subcategoryCount.length}, 70%, 60%)`
+                ),
                 hoverOffset: 4
             }
         ]

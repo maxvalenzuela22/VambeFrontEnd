@@ -14,7 +14,7 @@ const Home = () => {
 
       <div className="home-card">
         <p>🎨 Diseño inspirado en la esencia de Vambe.</p>
-        <p>📊 Gráficos interactivos, rendimiento optimizado y una experiencia espectacular.</p>
+        <p>📊 Gráficos interactivos y una experiencia espectacular.</p>
       </div>
 
       <button className="home-button" onClick={navigator}>Explorar Más</button>

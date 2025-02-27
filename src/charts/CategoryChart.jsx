@@ -21,11 +21,11 @@ const CategoryChart = ({ categoryName }) => {
                         {
                             label: 'Cantidad',
                             data: counts,
-                            backgroundColor: labels.map((_, i) => `hsl(${i * 35}, 80%, 60%)`),
-                            borderColor: labels.map((_, i) => `hsl(${i * 35}, 80%, 40%)`),
+                            backgroundColor: labels.map((_, i) => `hsl(${(i * 360) / labels.length}, 80%, 60%)`),
+                            borderColor: labels.map((_, i) => `hsl(${(i * 360) / labels.length}, 80%, 40%)`),
+                            hoverBackgroundColor: labels.map((_, i) => `hsl(${(i * 360) / labels.length}, 90%, 50%)`),
                             borderWidth: 2,
                             borderRadius: 6,
-                            hoverBackgroundColor: labels.map((_, i) => `hsl(${i * 35}, 90%, 50%)`),
                         },
                     ],
                 });

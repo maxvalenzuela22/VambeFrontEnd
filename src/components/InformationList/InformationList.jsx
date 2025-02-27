@@ -77,13 +77,14 @@ const InformationList = () => {
           value={filters.client}
           onChange={handleFilterChange}
         />
-        <input
-          type="text"
-          name="seller"
-          placeholder="Vendedor"
-          value={filters.seller}
-          onChange={handleFilterChange}
-        />
+        <select name="seller" value={filters.seller} onChange={handleFilterChange}>
+          <option value="">Vendedor</option>
+          <option value="Toro">Toro</option>
+          <option value="Tiburon">Tiburón</option>
+          <option value="Boa">Boa</option>
+          <option value="Puma">Puma</option>
+          <option value="Zorro">Zorro</option>
+        </select>
         <select name="closed" value={filters.closed} onChange={handleFilterChange}>
           <option value="">Todos</option>
           <option value="1">Cerrado</option>
@@ -94,7 +95,7 @@ const InformationList = () => {
           <option value="Industria">Industria</option>
           <option value="Motivacion para Buscar Vambe">Motivacion para Buscar Vambe</option>
           <option value="Interes en Funcionalidades">Interés en Funcionalidades</option>
-          <option value="Motivacion para Buscar Vambe">Motivación para Buscar Vambe</option>
+          <option value="Canal de Descubrimiento de Vambe">Canal de Descubrimiento de Vambe</option>
         </select>
         <select name="subcategory" value={filters.subcategory} onChange={handleFilterChange} disabled={!filters.category}>
           <option value="">Subcategoría</option>
