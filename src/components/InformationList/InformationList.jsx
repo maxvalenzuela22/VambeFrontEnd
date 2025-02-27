@@ -80,7 +80,7 @@ const InformationList = () => {
         <select name="seller" value={filters.seller} onChange={handleFilterChange}>
           <option value="">Vendedor</option>
           <option value="Toro">Toro</option>
-          <option value="Tiburon">Tiburón</option>
+          <option value="Tiburón">Tiburón</option>
           <option value="Boa">Boa</option>
           <option value="Puma">Puma</option>
           <option value="Zorro">Zorro</option>
